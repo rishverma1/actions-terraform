@@ -1,0 +1,24 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::051069116325:user/terraform-actions"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::tf-state-bucket-1234556"
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::051069116325:user/terraform-actions"
+            },
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::tf-state-bucket-1234556/*"
+        }
+    ]
+}
